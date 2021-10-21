@@ -19,6 +19,7 @@ const SpaceShip = () => {
 					} 
 				});
 				setDocData([...filteredType]);
+
 			})
 	), [setDocData, division.relation]);
 

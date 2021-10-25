@@ -1,6 +1,8 @@
 import React from 'react';
 import {useParams, useHistory} from 'react-router-dom';
 
+import StyledSpaceShip from './styled/SpaceShip/SpaceShip.styled';
+
 const SpaceshipData = ({doc}) => {
 	const {type} = useParams();
 	const history = useHistory();
@@ -17,19 +19,18 @@ const SpaceshipData = ({doc}) => {
 		photo: data.image.url,
 		altText: data.image.alt
 	};
-	const relation = data.relation.uid;
+
     const handleBackClick = () => {
 		history.goBack();
 	}
 
 	return (
-		<div>
+		<StyledSpaceShip>
 			<h1>{title}</h1>
-            <p>{text}</p>
+			<p>{text}</p>
 			<img src={image.photo} alt={image.altText} style={{maxWidth: '500px'}}/>
-			<p>{relation}</p>
 			<button onClick={handleBackClick}>Wstecz</button>
-		</div>
+		</StyledSpaceShip>
 	);
 };
 

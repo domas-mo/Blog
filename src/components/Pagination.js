@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link, useParams} from 'react-router-dom';
 
+import PaginationLinkStyled from './styled/Pagination/PaginationLink.styled';
+import PaginationStyled from './styled/Pagination/Pagination.styled';
+
 const Pagination = (props) => {
 	const {categor = '', page} = useParams();
 	const path = `/categor,${categor}`;
@@ -16,11 +19,15 @@ const Pagination = (props) => {
 
 	return (
 		<>
-			{children.slice(begin, end)}
-			<nav>
-				<ul>{links}</ul>
+			<PaginationStyled>
+				{children.slice(begin, end)}
+			</PaginationStyled>
+			<nav> 
+				<PaginationLinkStyled>
+					<p>Wybierz stronę:</p>
+					{links}
+				</PaginationLinkStyled>
 			</nav>
-
 		</>
 	);
 

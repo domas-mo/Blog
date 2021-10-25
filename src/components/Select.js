@@ -1,6 +1,8 @@
 import React from 'react';
 import {useHistory, Redirect} from 'react-router-dom';
 
+import StyledSelect from './styled/Select/Select.styled';
+
 const Input = ({division, setDivision}) => {
 	const history = useHistory();
 
@@ -17,15 +19,16 @@ const Input = ({division, setDivision}) => {
 
 	return (
 		<>
-			<form>
-				<label htmlFor="categor">Category: </label>
+			<hr/>
+			<StyledSelect>
 				<select form="categor" onChange={handleChange}>
-					<option value=''>Wszystkie</option>
+					<option value=''>Wszystkie Kategorie</option>
 					<option value='rakieta'>Rakieta</option>
 					<option value='wahadłowiec'>Wahadłowiec</option>
 				</select>
-			</form>
+			</StyledSelect>
 			<Redirect to={`/categor,${division.relation}/1`}/>
+			<hr/>
 		</>
 	);
 };

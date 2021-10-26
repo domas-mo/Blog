@@ -28,12 +28,12 @@ const SpaceShip = () => {
     return (
 		<Router>
 			<TtitleStyled>
-				<h1>SpaceShip</h1>
+				<h1>SpaceShip.</h1>
 				<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut sapien lacus.<br/>
-				Maecenas egestas nec justo in facilisis. Quisque id gravida leo. Integer fringilla diam eget <br/>
-				ligula dictum tristique at id leo. Etiam vehicula facilisis sodales. <br/>
-				Ut quis lectus nisi. Integer et blandit metus, ac lacinia quam. Donec ut leo justo.<br/>
+					SpaceShip to blog którego celem jest popularyzacja technologii, które pomogły nam w eksploracji kosmosu. <br/>
+					Blog zawiera ciekawostki oraz opisy najważniejszych programów badań przestrzeni kosmicznej.<br/>
+					<br/>
+					<q><em>That's one small step for man, one giant leap for mankind</em></q> - Neil Amstrong
 				</p>
 			</TtitleStyled>
 			<Switch>

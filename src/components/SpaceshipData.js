@@ -13,6 +13,7 @@ const SpaceshipData = ({doc}) => {
 
 	const {data} = selected;
 
+	const date = data.date
 	const title = data.title[0].text;
     const text = data.text[0].text;
 	const image = {
@@ -26,10 +27,13 @@ const SpaceshipData = ({doc}) => {
 
 	return (
 		<StyledSpaceShip>
-			<h1>{title}</h1>
-			<p>{text}</p>
-			<img src={image.photo} alt={image.altText} style={{maxWidth: '500px'}}/>
-			<button onClick={handleBackClick}>Wstecz</button>
+			<img src={image.photo} alt={image.altText}/>
+			<section>
+				<h1>{title}</h1>
+				<p>{text}</p>
+				<p>data wpisu: {date}</p>
+				<button onClick={handleBackClick}>Wstecz</button>
+			</section>
 		</StyledSpaceShip>
 	);
 };

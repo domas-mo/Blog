@@ -1,11 +1,35 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const opacity = keyframes`
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+`;
 
 const StyledSpaceShip = styled.div`
-    margin: 0 auto;
-    background: #e9eaee;
+    animation: ${opacity} 1s ease-in;
+    width: 100%;
+    padding: 4rem 0;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #4e4a7e;
+
+    section {
+        width: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 20px;
+        background: #e9eaee;
+        box-shadow: 5.11px 5.11px 21px #2a2654, -5.11px -5.11px 21px #39346b;
+    }
     
     h1 {
         margin: 1rem;
@@ -14,18 +38,19 @@ const StyledSpaceShip = styled.div`
         letter-spacing: 3px;
         margin-top: 1rem;
         text-align: center;
-        padding-top: 20px;
     }
 
     img {
-        margin: 2rem;
+        border-radius: 20px;
+        max-width: 500px;
+        box-shadow: 5.11px 5.11px 21px #2a2654, -5.11px -5.11px 21px #39346b;
     }
 
     p {
-        width: 100vh;
+        margin: 0 4rem;
         font-size: 20px;
-        text-align: center;
-        color: #60666d
+        color: #60666d;
+        margin-bottom: 1rem;
     }
     
     button {

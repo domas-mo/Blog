@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const TtitleStyled = styled.header`
     background-color: #ffffff;
-    height: 40vh;
     text-align: center;
 
     h1 {
@@ -16,6 +15,7 @@ const TtitleStyled = styled.header`
         margin: 1rem 0;
         color: #4e4a7e;
         letter-spacing: 1.5px;
+        padding-bottom: 1rem;
     }
 `
 

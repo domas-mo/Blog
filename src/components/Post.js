@@ -11,9 +11,7 @@ const Post = (props) => {
 			<h1>{post.data.title[0].text}</h1>
 			<p>{post.data.short_info[0].text}</p>
 			<p>data wpisu: {post.data.date}</p>
-			<button>
-				<Link exact to={`/spaceship/${post.uid}`}>Zobacz więcej...</Link>
-			</button>
+			<Link exact to={`/spaceship/${post.uid}`}><button>Zobacz więcej...</button></Link>
 		</DivPost>
 	);
 };

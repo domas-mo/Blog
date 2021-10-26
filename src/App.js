@@ -1,6 +1,5 @@
 import SpaceShip from './components/SpaceShip';
 
-
 import ResetStyle from './components/styled/Reset';
 import GlobalStyle from './components/styled/GlobalStyle';
 

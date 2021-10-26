@@ -29,10 +29,6 @@ const DivPost = styled.div`
         border-radius: 10px;
         background-color: #4e4a7e;
         cursor: pointer;
-    }
-
-    button a {
-        text-decoration: none;
         color: #ffff;
     }
 

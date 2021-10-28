@@ -5,7 +5,7 @@ const TtitleStyled = styled.header`
     text-align: center;
 
     h1 {
-        padding-top: 60px;
+        padding-top: 20px;
         font-size: 50px;
         color: #4e4a7e;
         letter-spacing: 3px;

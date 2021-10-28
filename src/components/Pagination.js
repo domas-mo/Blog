@@ -1,10 +1,12 @@
 import React from 'react';
-import {Link, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 
-import PaginationLinkStyled from './styled/Pagination/PaginationLink.styled';
+import StyledLink from './styled/Pagination/PaginationNav.styled';
+import PaginationUlStyled from './styled/Pagination/PaginationUl.styled';
 import PaginationStyled from './styled/Pagination/Pagination.styled';
 
 const Pagination = (props) => {
+	const activeClass = 'active';
 	const {categor = '', page} = useParams();
 	const path = `/categor,${categor}`;
 	const {children, limit = 6} = props;
@@ -13,7 +15,7 @@ const Pagination = (props) => {
 	const end = page * limit;
 	const pages = Math.ceil(length / limit);
 	const links = (new Array(pages).fill(0)).map((item, index) => <li key={index}>
-			<Link to={`${path}/${index + 1}`}>{index + 1}</Link>
+			<StyledLink activeClassName={activeClass} to={`${path}/${index + 1}`}>{index + 1}</StyledLink>
 		</li>
 	);
 
@@ -23,10 +25,10 @@ const Pagination = (props) => {
 				{children.slice(begin, end)}
 			</PaginationStyled>
 			<nav> 
-				<PaginationLinkStyled>
+				<PaginationUlStyled>
 					<p>Wybierz stronę:</p>
 					{links}
-				</PaginationLinkStyled>
+				</PaginationUlStyled>
 			</nav>
 		</>
 	);

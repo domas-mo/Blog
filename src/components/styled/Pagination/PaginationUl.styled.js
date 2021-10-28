@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-const PaginationLinkStyled = styled.ul`
-    width: 20vh;
+const PaginationUlStyled = styled.ul`
     display: flex;
-    justify-content: space-evenly;
     list-style-type: none;
     padding: 10px;
+    justify-content: center;
 
     a {
         color: #60666d
@@ -13,7 +12,13 @@ const PaginationLinkStyled = styled.ul`
 
     p {
         color: #60666d;
+        margin: 0 1rem;
     }
+
+    li {
+        margin: 0 0.2rem;
+    }
+
 `
 
-export default PaginationLinkStyled
+export default PaginationUlStyled

@@ -10,8 +10,6 @@ const fetchData = async (type) => {
     if(response) {
 		return response;
 	}
-	
 }
-
 
 export default fetchData;

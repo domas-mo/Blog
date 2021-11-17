@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+![Blog](./src/image/Blog.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Blog
 
-In the project directory, you can run:
+Blog is about spacecraft, includes two categories: rockets and shuttles. In this project I used [prismic](https://prismic.io/) to create contents that are downloaded from [API](https://prismic.io/docs/technologies/introduction-to-the-content-query-api). You can select a category that interests you and view the post. The website uses pagination.
 
-### `npm start`
+**Main features**:
+- React
+- React Route
+- Styled Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+&nbsp;
+ 
+## 💡 Technologies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+&nbsp;
+ 
+## 💿 Installation
 
-### `npm test`
+The project uses [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/). Having them installed, type into the terminal: `npm i`.
+&nbsp;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🤔 Solutions provided in the project
 
-### `npm run build`
+1. Example of the pagination used in this project.
+```
+const Pagination = (props) => {
+	const activeClass = 'active';
+	const {categor = '', page} = useParams();
+	const path = `/categor,${categor}`;
+	const {children, limit = 6} = props;
+	const length = children.length;
+	const begin = limit * (page - 1);
+	const end = page * limit;
+	const pages = Math.ceil(length / limit);
+	const links = (new Array(pages).fill(0)).map((item, index) => <li key={index}>
+			<StyledLink activeClassName={activeClass} to={`${path}/${index + 1}`}>{index + 1}</StyledLink>
+		</li>
+	);
+	...
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Prismic configuration.
+```
+import Prismic from '@prismicio/client';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+const apiEndpoint = 'https://myspaceblog.prismic.io/api/v2';
+const accessToken = '';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+const fetchData = async (type) => {
+	const client = Prismic.client(apiEndpoint, { accessToken });
+	const response = await client.query(Prismic.Predicates.at('document.type', type));
 
-### `npm run eject`
+    if(response) {
+		return response;
+	}
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+export default fetchData;
+```
+&nbsp;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🙋‍♂️ Feel free to contact me
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Find me on...
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<p align="center">
+	<a href="https://github.com/domas-mo"><img alt="github" width="10%" style="padding:5px" src="https://img.icons8.com/clouds/100/000000/github.png"/></a>
+	<a href="https://www.linkedin.com/in/dominik-mo/"><img alt="linkedin" width="10%" style="padding:5px" src="https://img.icons8.com/clouds/100/000000/linkedin.png"/></a>
+    <a href="mailto:dominik.mozdzen1@gmail.com"><img alt="linkedin" width="10%" style="padding:5px" src="https://img.icons8.com/clouds/100/000000/email.png"/></a>
+</p>
+&nbsp;
 
-## Learn More
+## 👏 Thanks / Special thanks / Credits
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To my [Mentor - devmentor.pl](https://devmentor.pl/) - for providing me with this task and for code review.

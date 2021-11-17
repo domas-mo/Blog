@@ -1,4 +1,4 @@
-![Blog](./src/image/Blog.png)
+![Blog](./src/image/blog.png)
 
 
 # Blog

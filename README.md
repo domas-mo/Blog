@@ -5,6 +5,8 @@
 
 Blog is about spacecraft, includes two categories: rockets and shuttles. In this project I used [prismic](https://prismic.io/) to create contents that are downloaded from [API](https://prismic.io/docs/technologies/introduction-to-the-content-query-api). You can select a category that interests you and view the post. The website uses pagination.
 
+See the live version of [Blog](https://domas-mo.github.io/Blog/)
+
 **Main features**:
 - React
 - React Route
